@@ -2,14 +2,19 @@ package models;
 
 import java.util.List;
 import java.util.ArrayList;
+import javax.persistence.*;
 
-public class User {
+import play.db.jpa.*;
 
-    private String username;
+@Entity
+public class User extends Model{
 
-    private String password;
+    public String username;
 
-    private List<Source> accounts;
+    public String password;
+
+    @OneToMany
+    public List<Source> accounts;
 
     public User() {}
 
@@ -19,23 +24,4 @@ public class User {
 	this.accounts = new ArrayList<Source>();
     }
 
-    public void setUsername(String username) {
-	this.username = username;
-    }
-
-    public String getUsername() {
-	return username;
-    }
-
-    public void setPassword(String password) {
-	this.password = password;
-    }
-
-    public String getPassword() {
-	return password;
-    }
-
-    public List<Source> getAccounts() {
-	return accounts;
-    }
 }

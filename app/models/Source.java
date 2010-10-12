@@ -1,8 +1,13 @@
 package models;
 
-public class Source {
+import javax.persistence.*;
 
-    private String url;
+import play.db.jpa.*;
+
+@Entity
+public class Source extends Model{
+
+    public String url;
 
     public Source() {}
 
@@ -10,12 +15,4 @@ public class Source {
 	this.url = url;
     }
 
-    public void setUrl(String url) {
-	this.url = url;
-    }
-
-    public String getUrl() {
-	return url;
-    }
-    
 }
