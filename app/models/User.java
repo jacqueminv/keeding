@@ -13,7 +13,7 @@ public class User extends Model{
 
     public String password;
 
-    @OneToMany
+    @OneToMany(cascade=CascadeType.ALL)
     public List<Source> accounts;
 
     public User() {}
@@ -22,6 +22,10 @@ public class User extends Model{
 	this.username = username;
 	this.password = password;
 	this.accounts = new ArrayList<Source>();
+    }
+
+    public static User exist(String username) {
+	return find("byUsername", username).first();
     }
 
 }
