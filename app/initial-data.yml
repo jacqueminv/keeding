@@ -1,0 +1,15 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+# User(bob):
+#   email: bob@gmail.com
+#   password: secret
+#   fullname: Bob
+
+Source(bilboTwitter):
+    url: http://twitter.com/#!/bilbo
+
+User(bilbo):
+    username: bilbo@gmail.com
+    password: secret
+    accounts: bilboTwitter

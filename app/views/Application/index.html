@@ -1,4 +1,15 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+<p>
+Welcome ${user.username}!
+</p>
+
+
+<p>
+  <ul>
+#{list items:user.accounts, as:'source'}
+     <li>${source.url}</li>
+#{/list}
+  </ul>
+</p>

@@ -10,3 +10,5 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  module:secure
+
+*	/					module:secure

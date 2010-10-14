@@ -1,0 +1,12 @@
+#{fixture delete:'all', load:'data.yml' /}
+
+#{selenium}
+clearSession()
+
+open('/login')
+type('username', 'bilbo@gmail.com')
+type('password', 'secret')
+click('signin')
+waitForPageToLoad(30000)
+assertXpathCount('//ul/li', 1)
+#{/selenium}
